@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -29,6 +45,12 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    --primary-green: 120 100% 25%;
+    --secondary-green: 120 100% 30%;
+    --primary-app: 43 100% 71%;
+    --primary-app-light: 44 100% 97.1%;
+    --secondary-app: 0 0% 96.1%;
+    --hover-button: 43 100% 80%;
   }
 
   .dark {
@@ -56,6 +78,11 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --primary-green: 120 100% 25%;
+    --secondary-green: 120 100% 30%;
+    --primary-app: 43 100% 71%;
+    -primary-app-light: 44 100% 97.1%;
+    --secondary-app: 0 0% 96.1%;
   }
 }
 

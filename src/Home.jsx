@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import Container from "./components/Container";
 import { Group } from "./components/Group";
 import { SplitSummary } from "./components/SplitSummary";
@@ -6,21 +7,41 @@ import { Button } from "./components/ui/button";
 import { ScrollArea } from "./components/ui/scroll-area";
 
 export function Home() {
+  const scrollRef = useRef(null);
+  const [showShadow, setShowShadow] = useState(false);
+
+  useEffect(() => {
+    const scrollElement = scrollRef.current?.querySelector(
+      "[data-radix-scroll-area-viewport]",
+    );
+    if (!scrollElement) return;
+
+    const handleScroll = () => {
+      setShowShadow(scrollElement.scrollTop > 0);
+    };
+
+    scrollElement.addEventListener("scroll", handleScroll);
+    return () => scrollElement.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <Container>
-      <div className="flex flex-col  w-screen h-screen">
-        <div className="  flex p-4 border-b border-gray-200 gap-2 items-center bg-app-primary ">
+      <div className="flex flex-col w-screen h-screen">
+        <div className="flex p-4 border-b border-gray-200 gap-2 items-center bg-app-primary">
           <Avatar className="h-full w-14">
             <AvatarImage src="/profile.svg" />
           </Avatar>
           <h1 className="font-bold text-2xl">Binit</h1>
-          <h3 className="descript p-4 ml-auto">Hey, Good to see you again.</h3>
+          <h3 className="p-4 ml-auto">Hey, Good to see you again.</h3>
         </div>
-        <SplitSummary />
-        <div className=" flex flex-col gap-2 flex-grow min-h-0 bg-app-primary-light">
-          <h2 className="text-2xl p-2 font-semibold">Groups & chats</h2>
 
-          <ScrollArea className=" flex flex-col gap-2 flex-grow min-h-0 overflow-y overflow-hidden border-b w-full ">
+        <div className={`${showShadow ? "shadow-md z-10 relative" : ""}`}>
+          <SplitSummary />
+        </div>
+
+        <ScrollArea ref={scrollRef}>
+          <div className="flex flex-col flex-grow min-h-0 bg-app-primary-light">
+            <h2 className="text-2xl py-2 px-4 font-semibold">Groups & chats</h2>
             <Group name="Binit" />
             <Group name="Dayal" />
             <Group name="Akshay" />
@@ -33,11 +54,11 @@ export function Home() {
             <Group name="Gouri" />
             <Group name="Gouri" />
             <Group name="Gouri" />
-          </ScrollArea>
-        </div>
+          </div>
+        </ScrollArea>
 
-        <div className="btn p-4 mt-auto  fixed bottom-5 right-5 ">
-          <Button className=" w-full h-12 bg-app-primary text-black text-xl rounded-xl shadow-xl">
+        <div className="btn p-4 mt-auto">
+          <Button className="w-full h-12 bg-app-primary text-black text-xl rounded-xl shadow-xl">
             CREATE NEW GROUP
           </Button>
         </div>

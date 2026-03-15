@@ -1,6 +1,14 @@
+import { useNavigate } from "react-router";
+
 export function SplitSummary() {
+  const navigate = useNavigate();
   return (
-    <div className="splitsec flex items-center border-b p-5 border-gray-200 gap-2 bg-app-secondary">
+    <div
+      className="splitsec flex items-center border-b p-5 border-gray-200 gap-2 bg-app-secondary"
+      onClick={() => {
+        navigate("/split_summary_details");
+      }}
+    >
       <div className="bilcontain flex items-center justify-center  w-fit">
         <img className="billsvg h-20 " src="bill.svg" />
         <div className="w-1/2 flex flex-col flex-grow ml-1">

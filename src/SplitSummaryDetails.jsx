@@ -32,9 +32,9 @@ export function SplitSummaryDetails() {
             />
           </div>
         </div>
-        <div className="flex flex-col bg-app-primary-light p-2 pb-0">
-          <Tabs defaultValue="Groups" className="w-full">
-            <TabsList className="w-full flex bg-app-secondary sticky">
+        <div className="flex flex-col bg-app-primary-light p-2 pb-0 overflow-auto h-100vh ">
+          <Tabs defaultValue="Groups" className="w-full  h-100vh">
+            <TabsList className="w-full flex bg-app-secondary ">
               <TabsTrigger className="w-1/2" value="Groups">
                 Groups
               </TabsTrigger>
@@ -42,11 +42,8 @@ export function SplitSummaryDetails() {
                 People
               </TabsTrigger>
             </TabsList>
-            <TabsContent
-              value="Groups"
-              className="flex flex-col h-100vh overflow-hidden"
-            >
-              <ScrollArea className=" bg-app-primary-light">
+            <TabsContent value="Groups" className="flex flex-col h-100vh ">
+              <ScrollArea className=" bg-app-primary-light  ">
                 <div className="flex flex-col gap-2">
                   <Group name="Akshay" />
                   <Group name="Akshay" />

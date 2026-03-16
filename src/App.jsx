@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router";
 import { Login } from "./Login";
-import { Home } from "./Home";
+import { Home } from "./pages/Home";
 import { SplitSummaryDetails } from "./SplitSummaryDetails";
-import { Chats } from "./Chats";
-import { SetNewSplit } from "./SetNewSplit";
+import { Chats } from "./pages/Chats";
+import { SetNewSplit } from "./pages/SetNewSplit";
+
 function App() {
   return (
     <BrowserRouter>

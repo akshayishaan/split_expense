@@ -1,6 +1,6 @@
-export function Amountbar() {
+export function AmountBar() {
   return (
-    <div className="h-16 rounded-lg bg-[#871A1E] m-2 mt-0 p-2 flex">
+    <div className="flex rounded-lg bg-[#871A1E] p-4">
       <div className="flex flex-col ml-2">
         <h3 className="text-[#dbdbdb] text-xs font-bold">
           Split expense summary

@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import Container from "./components/Container";
-import { Group } from "./components/Group";
-import { SplitSummary } from "./components/SplitSummary";
-import { Avatar, AvatarImage } from "./components/ui/avatar";
-import { Button } from "./components/ui/button";
-import { ScrollArea } from "./components/ui/scroll-area";
+import Container from "../components/Container";
+import { Group } from "../components/Group";
+import { SplitSummary } from "../components/SplitSummary";
+import { Avatar, AvatarImage } from "../components/ui/avatar";
+import { Button } from "../components/ui/button";
+import { ScrollArea } from "../components/ui/scroll-area";
+import Header from "./HeaderMVP";
 
 export function Home() {
   const scrollRef = useRef(null);
@@ -27,13 +28,17 @@ export function Home() {
   return (
     <Container>
       <div className="flex flex-col w-screen h-screen">
-        <div className="flex p-4 border-b border-gray-200 gap-2 items-center bg-app-primary">
-          <Avatar className="h-full w-14">
-            <AvatarImage src="/profile.svg" />
-          </Avatar>
-          <h1 className="font-bold text-2xl">Binit</h1>
-          <h3 className="p-4 ml-auto">Hey, Good to see you again.</h3>
-        </div>
+        <Header>
+          <Header.Main>
+            <div className="flex border-b border-gray-200 gap-2 items-center bg-app-primary space-between">
+              <Avatar className="h-full w-14">
+                <AvatarImage src="/profile.svg" />
+              </Avatar>
+              <h1 className="font-bold text-2xl">Binit</h1>
+            </div>
+            <h3 className="ml-auto">Hey, Good to see you again!</h3>
+          </Header.Main>
+        </Header>
 
         <div className={`${showShadow ? "shadow-md z-10 relative" : ""}`}>
           <SplitSummary />

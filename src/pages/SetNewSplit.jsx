@@ -11,6 +11,7 @@ import {
   ComboboxList,
 } from "../components/ui/combobox";
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export function SetNewSplit() {
   const [amt, setAmount] = useState(0);
@@ -25,7 +26,7 @@ export function SetNewSplit() {
           <Link to="/chats" className="block h-6 w-6 shrink-0">
             <BackArrow className="h-full w-full" />
           </Link>
-          <div className="flex flex-col justify-center items-center w-full h-12">
+          <div className="flex flex-col justify-center items-center w-full h-10">
             <h1 className="text-lg font-semibold text-[#000000] leading-tight">
               Split expense with
             </h1>
@@ -34,6 +35,16 @@ export function SetNewSplit() {
         </Header.Main>
       </Header>
       <div className=" flex flex-col items-center justify-center p-16 border-b border-grey border-dashed">
+        <Tabs defaultValue="Expense" className="w-full  h-100vh">
+          <TabsList className="w-full flex bg-app-secondary ">
+            <TabsTrigger className="w-1/2" value="Expense">
+              Expense
+            </TabsTrigger>
+            <TabsTrigger className="flex-grow" value="Credit">
+              Credit
+            </TabsTrigger>
+          </TabsList>
+        </Tabs>
         <div className="text-app-primary font-bold">Total Amount</div>
         <div className="flex items-center justify-center p-4 gap-1 border-b border-app-primary">
           <span className="text-6xl">₹</span>
@@ -50,30 +61,30 @@ export function SetNewSplit() {
         </div>
       </div>
       <div className="flex flex-col items-center justify-center">
-      <div className="flex items-center justify-center gap-2 p-4">
-        <span className="text-lg font-medium text-[#333333]">Paid By</span>
-        <Combobox
-          items={paidByOptions}
-          value={paidBy}
-          onValueChange={setPaidBy}
-        >
-          <ComboboxInput 
-            placeholder="" 
-            className="w-fit min-w-0 focus-within:ring-0 focus-within:border-input has-[[data-slot=input-group-control]:focus-visible]:ring-0 has-[[data-slot=input-group-control]:focus-visible]:border-input [&_input]:flex-none [&_input]:w-[100px]"
-            readOnly
-          />
-          <ComboboxContent>
-            <ComboboxList>
-              {(item) => (
-                <ComboboxItem key={item} value={item}>
-                  {item}
-                </ComboboxItem>
-              )}
-            </ComboboxList>
-          </ComboboxContent>
-        </Combobox>
-      </div>
-      <Button className="bg-app-primary text-black">Next</Button>
+        <div className="flex items-center justify-center gap-2 p-4">
+          <span className="text-lg font-medium text-[#333333]">Paid By</span>
+          <Combobox
+            items={paidByOptions}
+            value={paidBy}
+            onValueChange={setPaidBy}
+          >
+            <ComboboxInput
+              placeholder=""
+              className="w-fit min-w-0 focus-within:ring-0 focus-within:border-input has-[[data-slot=input-group-control]:focus-visible]:ring-0 has-[[data-slot=input-group-control]:focus-visible]:border-input [&_input]:flex-none [&_input]:w-[100px]"
+              readOnly
+            />
+            <ComboboxContent>
+              <ComboboxList>
+                {(item) => (
+                  <ComboboxItem key={item} value={item}>
+                    {item}
+                  </ComboboxItem>
+                )}
+              </ComboboxList>
+            </ComboboxContent>
+          </Combobox>
+        </div>
+        <Button className="bg-app-primary text-black">Next</Button>
       </div>
     </div>
   );

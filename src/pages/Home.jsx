@@ -30,7 +30,7 @@ export function Home() {
       <div className="flex flex-col w-screen h-screen">
         <Header>
           <Header.Main>
-            <div className="flex border-b border-gray-200 gap-2 items-center bg-app-primary space-between">
+            <div className="flex gap-1 items-center bg-app-primary space-between h-10">
               <Avatar className="h-full w-14">
                 <AvatarImage src="/profile.svg" />
               </Avatar>

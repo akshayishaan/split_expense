@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import Container from "./components/Container";
+import Container from "../components/Container";
 
 export function Login() {
   return (

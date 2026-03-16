@@ -1,11 +1,11 @@
 import { Link } from "react-router";
-import Container from "./components/Container";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
-import { ScrollArea } from "./components/ui/scroll-area";
-import { Group } from "./components/Group";
-import { Button } from "./components/ui/button";
-import Header from "./pages/HeaderMVP";
-import { BackArrow } from "./components/BackArrow";
+import Container from "../components/Container";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
+import { ScrollArea } from "../components/ui/scroll-area";
+import { Group } from "../components/Group";
+import { Button } from "../components/ui/button";
+import Header from "./HeaderMVP";
+import { BackArrow } from "../components/BackArrow";
 
 export function SplitSummaryDetails() {
   return (
@@ -16,7 +16,7 @@ export function SplitSummaryDetails() {
             <Link to="/home" className="block h-6 w-6 shrink-0">
               <BackArrow className="h-full w-full" />
             </Link>
-            <div className="flex flex-col justify-center w-full h-12">
+            <div className="flex flex-col justify-center w-full h-10">
               <h1 className="text-2xl">Expense Summary</h1>
             </div>
           </Header.Main>

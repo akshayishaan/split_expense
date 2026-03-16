@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router";
-import { Login } from "./Login";
+import { Login } from "./pages/Login";
 import { Home } from "./pages/Home";
-import { SplitSummaryDetails } from "./SplitSummaryDetails";
+import { SplitSummaryDetails } from "./pages/SplitSummaryDetails";
 import { Chats } from "./pages/Chats";
 import { SetNewSplit } from "./pages/SetNewSplit";
 

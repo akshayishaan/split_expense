@@ -9,11 +9,11 @@ export function Chats() {
   return (
     <div className="h-screen w-full flex flex-col">
       <Header>
-        <Header.Main className="pb-2">
+        <Header.Main>
           <Link to="/split_summary_details" className="block h-6 w-6 shrink-0">
             <BackArrow className="h-full w-full" />
           </Link>
-          <div className="flex items-center gap-2 h-12">
+          <div className="flex items-center gap-2 h-10">
             <Avatar className="h-12 w-12 shrink-0">
               <AvatarImage src="/profile.svg" />
             </Avatar>

@@ -4,19 +4,23 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 import { ScrollArea } from "./components/ui/scroll-area";
 import { Group } from "./components/Group";
 import { Button } from "./components/ui/button";
+import Header from "./pages/HeaderMVP";
+import { BackArrow } from "./components/BackArrow";
 
 export function SplitSummaryDetails() {
   return (
     <Container>
       <div className="flex flex-col w-screen h-screen">
-        <div className="flex flex-start gap-4 ex-sum p-4 items-center bg-app-primary">
-          <div className="h-6 w-6">
-            <Link to="/home">
-              <img className="" src="/back-arrow.svg" />
+        <Header>
+          <Header.Main>
+            <Link to="/home" className="block h-6 w-6 shrink-0">
+              <BackArrow className="h-full w-full" />
             </Link>
-          </div>
-          <h1 className="text-2xl">Expense Summary</h1>
-        </div>
+            <div className="flex flex-col justify-center w-full h-12">
+              <h1 className="text-2xl">Expense Summary</h1>
+            </div>
+          </Header.Main>
+        </Header>
 
         <div className=" flex gap-4 p-4 pl-0 items-center bg-app-secondary ">
           <div className="chip w-[0.5em] h-full rounded-r-full bg-red-500"></div>
